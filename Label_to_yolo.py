@@ -32,4 +32,4 @@ def convert_labels(path, x1, y1, x2, y2):
     except AttributeError:
         print('error! ', path)
         return (None, None, None)bbox_img['x'], bbox_img['y'], bbox_img['width'], bbox_img['height'] = zip(*bbox_img.progress_apply(lambda row: convert_labels(row['Path'], row['x1'], row['y1'], row['x2'], row['y2']), axis=1)) # Like python for one lone code.df = bbox_img.merge(train_test_valid_anot).merge(categories_img)
-df.to_csv('data/Anno/annotation_w-o_atr.csv', index=False)
+df.to_csv('data/Anno/annotation_w-o_atr.csv', index=False)y
